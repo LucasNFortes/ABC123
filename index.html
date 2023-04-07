@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Alfabeto e números</title>
+  </head>
+  <style>
+    #letters, #numbers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    button {
+      min-width: 8rem;
+      min-height: 8rem;
+      font-size: 5rem;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border: 5px solid black;
+      border-radius: 2rem;
+      text-shadow: 0 0 10px white;
+      cursor: pointer;
+    }
+    body {
+      background-image: url(./bg.jpg);
+      background-size: 100%;
+    }
+    #letters {
+      margin-bottom: 5rem;
+    }
+  </style>
+  <body>
+    <div id="letters">
+      <button onclick="playAudio('A')">A</button>
+      <button onclick="playAudio('B')">B</button>
+      <button onclick="playAudio('C')">C</button>
+      <button onclick="playAudio('D')">D</button>
+      <button onclick="playAudio('E')">E</button>
+      <button onclick="playAudio('F')">F</button>
+      <button onclick="playAudio('G')">G</button>
+      <button onclick="playAudio('H')">H</button>
+      <button onclick="playAudio('I')">I</button>
+      <button onclick="playAudio('J')">J</button>
+      <button onclick="playAudio('K')">K</button>
+      <button onclick="playAudio('L')">L</button>
+      <button onclick="playAudio('M')">M</button>
+      <button onclick="playAudio('N')">N</button>
+      <button onclick="playAudio('O')">O</button>
+      <button onclick="playAudio('P')">P</button>
+      <button onclick="playAudio('Q')">Q</button>
+      <button onclick="playAudio('R')">R</button>
+      <button onclick="playAudio('S')">S</button>
+      <button onclick="playAudio('T')">T</button>
+      <button onclick="playAudio('U')">U</button>
+      <button onclick="playAudio('V')">V</button>
+      <button onclick="playAudio('W')">W</button>
+      <button onclick="playAudio('X')">X</button>
+      <button onclick="playAudio('Y')">Y</button>
+      <button onclick="playAudio('Z')">Z</button>
+    </div>
+    <div id="numbers">
+        <button onclick="playAudio('0')">0</button>
+        <button onclick="playAudio('1')">1</button>
+        <button onclick="playAudio('2')">2</button>
+        <button onclick="playAudio('3')">3</button>
+        <button onclick="playAudio('4')">4</button>
+        <button onclick="playAudio('5')">5</button>
+        <button onclick="playAudio('6')">6</button>
+        <button onclick="playAudio('7')">7</button>
+        <button onclick="playAudio('8')">8</button>
+        <button onclick="playAudio('9')">9</button>
+    </div>
+    <audio id="audio" src=""></audio>
+    <script>
+    function playAudio(letter) {
+      var audio = document.getElementById("audio");
+      audio.src = letter + ".mp3";
+      audio.play();
+    }
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    var buttons = document.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].style.backgroundColor = getRandomColor();
+    }
+    </script>
+  </body>
+</html>
