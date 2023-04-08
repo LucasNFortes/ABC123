@@ -5,7 +5,7 @@
     <title>Alfabeto e números</title>
   </head>
   <style>
-    #letters, #numbers {
+    #letters, #numbers, #fonte {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -14,12 +14,12 @@
     button {
       min-width: 8rem;
       min-height: 8rem;
-      font-size: 5rem;
+      font-size: 4rem;
       padding: 0.5rem;
       margin: 0.5rem;
       border: 5px solid black;
       border-radius: 2rem;
-      text-shadow: 0 0 10px white;
+      text-shadow: 0 0 5px white;
       cursor: pointer;
     }
     body {
@@ -28,6 +28,14 @@
     }
     #letters {
       margin-bottom: 5rem;
+    }
+    @font-face {
+      font-family: 'ABC';
+      src: url(./abc.ttf);
+    }
+    .custom-font {
+      font-family: 'ABC', sans-serif;      
+      font-weight: bold;
     }
   </style>
   <body>
@@ -71,6 +79,9 @@
         <button onclick="playAudio('8')">8</button>
         <button onclick="playAudio('9')">9</button>
     </div>
+    <div id="fonte">
+      <button onclick="changeFont()">Mudar fonte</button>
+    </div>
     <audio id="audio" src=""></audio>
     <script>
     function playAudio(letter) {
@@ -91,6 +102,13 @@
     var buttons = document.querySelectorAll("button");
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].style.backgroundColor = getRandomColor();
+    }
+
+    function changeFont() {
+      var buttons = document.getElementsByTagName('button');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.toggle('custom-font');
+      }
     }
     </script>
   </body>
