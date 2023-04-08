@@ -5,7 +5,7 @@
     <title>Alfabeto e números</title>
   </head>
   <style>
-    #letters, #numbers, #fonte {
+    #letters, #numbers, #fonte, #teste {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -36,6 +36,9 @@
     .custom-font {
       font-family: 'ABC', sans-serif;      
       font-weight: bold;
+    }
+    #teste p, #teste button {
+      margin: 0;
     }
   </style>
   <body>
@@ -71,18 +74,20 @@
       <button onclick="playAudio('Z')">Zz</button>
     </div>
     <div id="numbers">
-        <button onclick="playAudio('0')">0</button>
-        <button onclick="playAudio('1')">1</button>
-        <button onclick="playAudio('2')">2</button>
-        <button onclick="playAudio('3')">3</button>
-        <button onclick="playAudio('4')">4</button>
-        <button onclick="playAudio('5')">5</button>
-        <button onclick="playAudio('6')">6</button>
-        <button onclick="playAudio('7')">7</button>
-        <button onclick="playAudio('8')">8</button>
-        <button onclick="playAudio('9')">9</button>
+      <button onclick="playAudio('0')">0</button>
+      <button onclick="playAudio('1')">1</button>
+      <button onclick="playAudio('2')">2</button>
+      <button onclick="playAudio('3')">3</button>
+      <button onclick="playAudio('4')">4</button>
+      <button onclick="playAudio('5')">5</button>
+      <button onclick="playAudio('6')">6</button>
+      <button onclick="playAudio('7')">7</button>
+      <button onclick="playAudio('8')">8</button>
+      <button onclick="playAudio('9')">9</button>
     </div>
-    
+    <div id="teste">
+	    <button><p contenteditable="true">Escreva aqui.</p></button>
+	  </div>
     <audio id="audio" src=""></audio>
 
     <script>
